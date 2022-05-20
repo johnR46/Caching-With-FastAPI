@@ -4,7 +4,8 @@ ADD . /
 RUN apt-get update \ 
     && apt-get install gcc -y \
     && pip install --no-cache-dir -r requirements.txt \
-    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /var/lib/apt/lists/*
+EXPOSE 8080
 CMD ["python", "main.py"]
 
 # Install pip requirements
