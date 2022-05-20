@@ -2,17 +2,17 @@ import logging
 
 from fastapi import APIRouter, HTTPException
 
-from cache_config import api_used_cache
-from cache_util import delete_cached
-from memcache_status import MemcachedStats
+from config.cache_config import api_used_cache
+from utils.cache_util import delete_cached
+from utils.memcache_status import MemcachedStats
+
+logging.basicConfig(level=logging.INFO)
 
 router = APIRouter(
     prefix="/clear-cache",
     tags=["clear Cache"],
     responses={404: {"message": "Not found"}}
 )
-
-logging.basicConfig(level=logging.INFO)
 
 
 @router.post("/{table_name}")
