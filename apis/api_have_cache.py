@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from cache_util import get_value_from_cache, set_value_to_cache, default_key_builder
-from mock_response import get_todo_all, get_todo_by_id
+from utils.cache_util import get_value_from_cache, set_value_to_cache, default_key_builder
+from utils.mock_response import get_todo_all, get_todo_by_id
 
 router = APIRouter(
     prefix="/todo",
