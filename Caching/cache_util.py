@@ -25,8 +25,8 @@ def set_value_to_cache(key: str, value: any) -> None:
 
 def delete_cached(key_list: list):
     for key in key_list:
-        client.delete(key)
-        logging.info(f"cache key '{key}' deleted")
+        result = client.delete(key, False)
+        logging.info(f"cache key '{key}' deleted it's :{result}")
         time.sleep(0.2)
 
 
